@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Iago Launcher</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #333;
+  }
+  button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #FFCB05;
+    color: #2A75BB;
+    font-weight: bold;
+    box-shadow: 3px 3px #333;
+    transition: transform 0.1s;
+  }
+  button:hover {
+    transform: scale(1.05);
+  }
+  p {
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+  <h1>Space Browser</h1>
+  <button id="launchBtn">Jugar</button>
+  <p>Launcher local creado para Chromebook por Iago</p>
+
+<script>
+  // URL codificada en Base64
+  const encodedURL = "aHR0cHM6Ly9kZXYuZGVzbW9zLmxpdmUuY2RuLmNsb3VkZmxhcmUubmV0LyY=";
+
+  const launchBtn = document.getElementById('launchBtn');
+  launchBtn.addEventListener('click', () => {
+    const url = atob(encodedURL); // decodifica la URL
+    // Abre en nueva ventana tipo app
+    window.open(url, "_blank", "width=1024,height=768,toolbar=no,menubar=no,status=no");
+  });
+</script>
+</body>
+</html>
